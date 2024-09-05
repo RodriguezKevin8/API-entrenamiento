@@ -1,3 +1,4 @@
+// Initialize express router
 import express from "express";
 import { generateText, generateboard, generatefood } from "../controllers/geminiController.js";
 
