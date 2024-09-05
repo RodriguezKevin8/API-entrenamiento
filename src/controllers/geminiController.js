@@ -16,6 +16,7 @@ const generateTextFromPrompt = async (prompt, res) => {
         // Get the response from the model
         const response = await result.response;
         let text = await response.text();
+        console.log("Texto recibido:", text);
         // Remove the code block markdown from the response
         text = text.replace(/```json|```/g, ''); 
 

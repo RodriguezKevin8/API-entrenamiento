@@ -12,7 +12,7 @@ export const generateroutinedata = () => {
 };
 
 export const generatefooddata = (data) => {
-    return `Devuélveme 3 recetas de comida que contenga ${data.ingrediente} en formato JSON, con la siguiente estructura: 
+    return `Devuélveme 3 recetas de comida que contenga ${data.ingrediente} en formato JSON,, con la siguiente estructura: 
         {
             "receta": [
                 {
@@ -42,7 +42,7 @@ export const generatefistroutinedata = (data) => {
     return  `Basado en los datos de ${data.name} y basandose en su peso de ${data.weight} su altura de ${data.height} y su edad de ${data.age}, generame una rutina de maximo 5
     ejercicios que le ayuden a entrenar ${data.objetive} en formato JSON, con la siguiente estructura: 
     {
-        "mensaje": "Rutina generada para ${data.name} tipo en vase a tus datos se genero esta rutina para ti y eso",
+        "mensaje": "primero saludalo por su nombre ${data.name}  felicitalo por empezar este nuevo camino y  en vase a tus datos se genero esta rutina para ti y eso",
         "ejercicios": [
             {
                 "nombre": "Nombre del ejercicio",
