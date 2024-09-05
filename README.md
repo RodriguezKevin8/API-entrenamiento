@@ -9,5 +9,10 @@ Para utilizar la "App de Entrenamiento", asegúrate de seguir estos pasos:
 
 2. Crea un archivo `.env` en la raíz del proyecto y configura las variables necesarias. 
 
-3. Para ejecutar el servido debes de navegar dentro de la carpeta src y ejecutar el comando `node index.js`
+3. Navega dentro de la carpeta `src` ejecutando el siguiente comando en la terminal:
+    ```
+    cd src
+    ```
+    
+4. Ejecutar el comando `node index.js`
 Una vez que hayas completado estos pasos, estarás listo para utilizar la "App de Entrenamiento" con todas las funcionalidades personalizadas.

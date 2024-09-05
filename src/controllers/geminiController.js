@@ -2,6 +2,7 @@
 // Import the GoogleGenerativeAI class from the package
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
+
 // Create a new instance of the GoogleGenerativeAI class with the API key
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
