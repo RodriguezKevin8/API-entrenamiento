@@ -1,7 +1,7 @@
 
 // Import the GoogleGenerativeAI class from the package~
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { generateroutinedata, generatefooddata, generateboarddata, generatefistroutinedata  } from '../Text/prompts.js';
+import { generateroutinedata, generatefooddata, generateboarddata, generatefistroutinedata, generateExerciseScheduleData } from '../Text/prompts.js';
 
 
 // Create a new instance of the GoogleGenerativeAI class with the API key
@@ -70,4 +70,24 @@ export const generatefistroutine = async (req, res) => {
 //format to testing the endpoint
 // Metodo POST http://localhost:3000/gemini/generate-fist
 // Body:{ "name":"Juan", "weight":"70", "height":"1.70", "age":"25", "objetive":"biceps" }
+
+export const generatespecificroutine = async (req, res) => {
+    const data = req.body;
+    const prompt = generatespecificroutinedata(data);
+    generateTextFromPrompt(prompt, res);
+}
+
+//format to testing the endpoint
+// Metodo POST http://localhost:3000/gemini/generate-specific
+// Body:{ "name":"Juan", "weight":"70", "height":"1.70", "age":"25", "objetive":"abdomen" }
+
+export const generateExerciseSchedule = async (req, res) => {
+    const data = req.body;
+    const prompt = generateExerciseScheduleData(data);
+    generateTextFromPrompt(prompt, res);
+}
+
+//format to testing the endpoint
+// Metodo POST http://localhost:3000/gemini/generate-schedule
+// Body:{ "goald:"bajar peso"}
 

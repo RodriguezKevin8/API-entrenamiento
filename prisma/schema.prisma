@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model customroutines {
+  custom_routine_id Int       @id @default(autoincrement())
+  user_id           Int?
+  generated_date    DateTime? @default(now()) @db.Timestamp(6)
+  training_area     String    @db.VarChar(100)
+  routine_json      Json      @db.Json
+  comments          String?
+  custom            Boolean?  @default(true)
+  users             users?    @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model exerciseschedule {
+  schedule_id  Int      @id @default(autoincrement())
+  user_id      Int?
+  day_of_week  String   @db.VarChar(10)
+  muscle_group String   @db.VarChar(100)
+  is_rest_day  Boolean? @default(false)
+  users        users?   @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model routines {
+  routine_id     Int       @id @default(autoincrement())
+  user_id        Int?
+  generated_date DateTime? @default(now()) @db.Timestamp(6)
+  training_area  String    @db.VarChar(100)
+  routine_json   Json      @db.Json
+  comments       String?
+  users          users?    @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model users {
+  user_id           Int                @id @default(autoincrement())
+  first_name        String             @db.VarChar(100)
+  last_name         String             @db.VarChar(100)
+  email             String             @unique @db.VarChar(150)
+  password          String             @db.VarChar(255)
+  weight            Decimal            @db.Decimal(5, 2)
+  height            Decimal            @db.Decimal(4, 2)
+  age               Int
+  goal              String?            @db.VarChar(100)
+  registration_date DateTime?          @default(now()) @db.Timestamp(6)
+  customroutines    customroutines[]
+  exerciseschedule  exerciseschedule[]
+  routines          routines[]
+}
