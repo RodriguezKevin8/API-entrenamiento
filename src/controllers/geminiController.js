@@ -1,7 +1,7 @@
 
 // Import the GoogleGenerativeAI class from the package~
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { generateroutinedata, generatefooddata, generateboarddata, generatefistroutinedata, generateExerciseScheduleData } from '../Text/prompts.js';
+import { generateroutinedata, generatefooddata, generateboarddata, generatefistroutinedata,generatespecificroutinedata  } from '../Text/prompts.js';
 
 
 // Create a new instance of the GoogleGenerativeAI class with the API key
@@ -31,8 +31,8 @@ const generateTextFromPrompt = async (prompt, res) => {
 
 
 export const generateText = async (req, res) => {
-     
-    const prompt = generateroutinedata();   
+    const {muscle} = req.params;
+    const prompt = generateroutinedata(muscle);   
     generateTextFromPrompt(prompt, res);   
        
 };

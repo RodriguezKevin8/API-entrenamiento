@@ -14,7 +14,7 @@ export default class User {
             }
         });
     }
-
+    
     /**
      * @param {Object} data 
      */
@@ -53,7 +53,7 @@ export default class User {
                 age: true,
                 weight: true,
                 height: true,
-                password: true  // Recuperar también la contraseña encriptada
+                password: true 
             }
         });
     }

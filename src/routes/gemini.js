@@ -6,7 +6,7 @@ import { generateText, generateboard, generatefood, generatefistroutine, generat
 const router = express.Router();
 
 // Define the routes for the Gemini API
-router.get("/generate-routine", generateText);
+router.get("/generate-routine/:muscle", generateText);
 
 router.get("/generate-board", generateboard);
 

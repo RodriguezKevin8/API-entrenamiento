@@ -1,5 +1,5 @@
-export const generateroutinedata = () => {
-    return `Devuélveme una rutina de ejercicio para bíceps con 5 ejercicios en formato JSON, con la siguiente estructura: 
+export const generateroutinedata = (muscle) => {
+    return `Devuélveme una rutina de ejercicio para ${muscle} con 5 ejercicios en formato JSON, con la siguiente estructura: 
     {
         "ejercicios": [
             {
@@ -57,7 +57,6 @@ export const generatespecificroutinedata  = (data) => {
     return  `Basado en los datos de ${data.name} y basandose en su peso de ${data.weight} su altura de ${data.height} y su edad de ${data.age}, generame una rutina de maximo 5
     ejercicios que le ayuden a entrenar ${data.objetive} en formato JSON, con la siguiente estructura: 
     {
-        "mensaje": "primero saludalo por su nombre ${data.name}  en vase a tus datos corporales de di esta rutina para ti y eso",
         "ejercicios": [
             {
                 "nombre": "Nombre del ejercicio",
